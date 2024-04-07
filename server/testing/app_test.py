@@ -117,6 +117,7 @@ class TestApp:
                 assert(record['created_at'])
             
             prices = [record['price'] for record in data]
+            print("Prices:", prices)
             assert(all(prices[i] >= prices[i+1] for i in range(len(prices) - 1)))
 
             db.session.delete(b1)
